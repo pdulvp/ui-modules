@@ -1,10 +1,10 @@
 {
   "name": "@pdulvp/tip",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "repository": {
-	  "type": "git",
-	  "url": "git://github.com/pdulvp/tip.git"
+    "type": "git",
+    "url": "git://github.com/pdulvp/tip.git"
   },
   "main": "tip.js",
   "scripts": {
