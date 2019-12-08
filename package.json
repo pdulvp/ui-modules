@@ -1,10 +1,10 @@
 {
   "name": "@pdulvp/list-charts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "repository": {
-	  "type": "git",
-	  "url": "git://github.com/pdulvp/list-charts.git"
+    "type": "git",
+    "url": "git://github.com/pdulvp/list-charts.git"
   },
   "main": "list-charts.js",
   "scripts": {
