@@ -2,6 +2,10 @@
   "name": "@pdulvp/retriever-caf",
   "version": "1.0.0",
   "description": "",
+  "repository": {
+	  "type": "git",
+	  "url": "git://github.com/pdulvp/retriever-caf.git"
+  },
   "main": "caf.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
