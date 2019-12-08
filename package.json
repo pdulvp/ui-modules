@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "chart-france.js",
+  "repository": {
+	  "type": "git",
+	  "url": "git://github.com/pdulvp/chart-france.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
