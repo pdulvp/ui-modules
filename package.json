@@ -1,10 +1,10 @@
 {
   "name": "@pdulvp/retriever-caf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "repository": {
-	  "type": "git",
-	  "url": "git://github.com/pdulvp/retriever-caf.git"
+    "type": "git",
+    "url": "git://github.com/pdulvp/retriever-caf.git"
   },
   "main": "caf.js",
   "scripts": {
