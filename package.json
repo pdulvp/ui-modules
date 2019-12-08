@@ -1,10 +1,10 @@
 {
   "name": "@pdulvp/httpquery",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "repository": {
-	  "type": "git",
-	  "url": "git://github.com/pdulvp/httpquery.git"
+    "type": "git",
+    "url": "git://github.com/pdulvp/httpquery.git"
   },
   "main": "httpquery.js",
   "scripts": {
