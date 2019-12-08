@@ -1,10 +1,10 @@
 {
   "name": "@pdulvp/chart-share",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "repository": {
-	  "type": "git",
-	  "url": "git://github.com/pdulvp/chart-share.git"
+    "type": "git",
+    "url": "git://github.com/pdulvp/chart-share.git"
   },
   "main": "chart-share.js",
   "scripts": {
