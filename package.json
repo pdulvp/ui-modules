@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "chart-cloud.js",
+  "repository": {
+	  "type": "git",
+	  "url": "git://github.com/pdulvp/chart-cloud.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
