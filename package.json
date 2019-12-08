@@ -2,6 +2,10 @@
   "name": "@pdulvp/list-links",
   "version": "1.0.0",
   "description": "",
+  "repository": {
+	  "type": "git",
+	  "url": "git://github.com/pdulvp/list-links.git"
+  },
   "main": "list-links.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
