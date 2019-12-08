@@ -2,6 +2,10 @@
   "name": "@pdulvp/chart-ptitle",
   "version": "1.0.0",
   "description": "",
+  "repository": {
+	  "type": "git",
+	  "url": "git://github.com/pdulvp/chart-ptitle.git"
+  },
   "main": "chart-ptitle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
