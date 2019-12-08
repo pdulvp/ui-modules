@@ -23,7 +23,7 @@ if(typeof exports === 'object' && typeof module === 'object') {
 }
 
 if (typeof modules === 'object') {
-	modules.register("@pdulvp/an", an);
+	modules.register("@pdulvp/retriever-an", an);
 }
 
 /*
