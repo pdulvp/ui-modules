@@ -1,10 +1,10 @@
 {
   "name": "@pdulvp/sources",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "repository": {
-	  "type": "git",
-	  "url": "git://github.com/pdulvp/sources.git"
+    "type": "git",
+    "url": "git://github.com/pdulvp/sources.git"
   },
   "main": "sources.js",
   "scripts": {
