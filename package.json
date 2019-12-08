@@ -1,10 +1,10 @@
 {
   "name": "@pdulvp/list-carousel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "repository": {
-	  "type": "git",
-	  "url": "git://github.com/pdulvp/list-carousel.git"
+    "type": "git",
+    "url": "git://github.com/pdulvp/list-carousel.git"
   },
   "main": "list-carousel.js",
   "scripts": {
