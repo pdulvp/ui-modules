@@ -51,7 +51,7 @@ if(typeof exports === 'object' && typeof module === 'object') {
 }
 
 if (typeof modules === 'object') {
-	modules.register("@pdulvp/caf", caf);
+	modules.register("@pdulvp/retriever-caf", caf);
 }
 
 /*
