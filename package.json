@@ -2,6 +2,10 @@
   "name": "@pdulvp/retriever-an",
   "version": "1.0.1",
   "main": "an.js",
+  "repository": {
+	  "type": "git",
+	  "url": "git://github.com/pdulvp/retriever-an.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
