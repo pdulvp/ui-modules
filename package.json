@@ -1,10 +1,10 @@
 {
   "name": "@pdulvp/colors",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "repository": {
-	  "type": "git",
-	  "url": "git://github.com/pdulvp/colors.git"
+    "type": "git",
+    "url": "git://github.com/pdulvp/colors.git"
   },
   "main": "colors.js",
   "scripts": {
