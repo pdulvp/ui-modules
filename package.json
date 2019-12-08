@@ -2,6 +2,10 @@
   "name": "@pdulvp/chart-source",
   "version": "1.0.0",
   "description": "",
+  "repository": {
+	  "type": "git",
+	  "url": "git://github.com/pdulvp/chart-source.git"
+  },
   "main": "chart-source.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
