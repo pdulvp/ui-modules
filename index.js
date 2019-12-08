@@ -55,11 +55,13 @@ let _index = {
 
 	adapt: function(index) {
 		let language = "fr";
-		if (document.location.host.startsWith("fr.")) {
-			language = "fr";
-		}
-		if (document.location.host.startsWith("en.")) {
-			language = "en";
+		if (typeof document !== 'undefined' && document) {
+			if (document.location.host.startsWith("fr.")) {
+				language = "fr";
+			}
+			if (document.location.host.startsWith("en.")) {
+				language = "en";
+			}
 		}
 		console.log("Set language to: "+language);
 		for (let i in index.mainSections) {
