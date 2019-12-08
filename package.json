@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "tip.js",
-  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "pdulvp",
   "license": "CC-BY-NC-SA-4.0",
   "dependencies": {
-    "@pdulvp/httpquery": "file:../../@pdulvp/httpquery",
-    "@pdulvp/index": "file:../../@pdulvp/index",
-    "@pdulvp/sources": "file:../../@pdulvp/sources"
+    "@pdulvp/httpquery": "^1.0.0",
+    "@pdulvp/index": "^1.0.0",
+    "@pdulvp/sources": "^1.0.0"
   }
 }
