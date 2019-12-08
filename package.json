@@ -1,10 +1,10 @@
 {
   "name": "@pdulvp/chart-line",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "repository": {
-	  "type": "git",
-	  "url": "git://github.com/pdulvp/chart-line.git"
+    "type": "git",
+    "url": "git://github.com/pdulvp/chart-line.git"
   },
   "main": "chart-line.js",
   "scripts": {
