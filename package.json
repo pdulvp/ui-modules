@@ -2,16 +2,15 @@
   "name": "@pdulvp/retriever-an",
   "version": "1.0.0",
   "main": "an.js",
-  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "pdulvp",
   "license": "CC-BY-NC-SA-4.0-4.0",
   "dependencies": {
-    "@pdulvp/fsquery": "file:../../@pdulvp/fsquery",
-    "@pdulvp/httpcquery": "file:../../@pdulvp/httpcquery",
-    "@pdulvp/httpquery": "file:../../@pdulvp/httpquery"
+    "@pdulvp/fsquery": "^1.0.1",
+    "@pdulvp/httpcquery": "^1.0.0",
+    "@pdulvp/httpquery": "^1.0.0"
   },
   "description": ""
 }
