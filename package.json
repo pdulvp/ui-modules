@@ -1,6 +1,6 @@
 {
   "name": "@pdulvp/chart-france",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Display a France map",
   "main": "chart-france.js",
   "repository": {
