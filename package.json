@@ -1,7 +1,7 @@
 {
   "name": "@pdulvp/chart-cloud",
   "version": "1.0.1",
-  "description": "",
+  "description": "Display a cloud tag",
   "main": "chart-cloud.js",
   "repository": {
     "type": "git",
