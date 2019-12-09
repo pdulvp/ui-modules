@@ -1,7 +1,7 @@
 {
   "name": "@pdulvp/colors",
   "version": "1.0.1",
-  "description": "",
+  "description": "Basic helpers for color manipulation",
   "repository": {
     "type": "git",
     "url": "git://github.com/pdulvp/colors.git"
@@ -11,5 +11,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "pdulvp",
-  "license": "CC-BY-NC-SA-4.0"
+  "license": "CC-BY-NC-SA-4.0",
+  "dependencies": {}
 }
