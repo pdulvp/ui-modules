@@ -68,7 +68,11 @@ if (typeof require !== "undefined" && typeof exports === 'object' && typeof modu
 						} else {
 							result = body;
 						}
-						resolve(result);
+						if (res.statusCode == 404) {
+							reject(res.statusCode);
+						} else {
+							resolve(result);
+						}
 				    });
 					
 				}).on('error', function(e) {
@@ -147,6 +151,37 @@ if (typeof require !== "undefined" && typeof exports === 'object' && typeof modu
 		modules.register("@pdulvp/httpquery", httpquery);
 	}
 	
+} else if (window.XMLHttpRequest) {
+	let httpquery = {
+		getFile: function(file) {
+			return httpquery.get(file.host, file.path);
+		},
+		
+		get: function(host, path) {
+			return new Promise((resolve, reject) => {
+				xmlhttp=new XMLHttpRequest();
+				xmlhttp.onload = function (e) {
+					if (xmlhttp.readyState === 4) {
+					  if (xmlhttp.status === 200) {
+						resolve(xmlhttp.responseText);
+					  } else {
+						reject(xmlhttp.statusText);
+					  }
+					}
+				  };
+				  xmlhttp.onerror = function (e) {
+					reject(xmlhttp.statusText);
+				  };
+				xmlhttp.open("GET", host+"/"+path, true);
+				xmlhttp.send(null); 
+			});
+		}
+	};
+
+	if (typeof modules === 'object') {
+		modules.register("@pdulvp/httpquery", httpquery);
+	}
+ 
 } else {
 	console.error("module httpquery can't be initialized");
 }
