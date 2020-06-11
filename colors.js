@@ -5,7 +5,7 @@
  * Colors
  */
 
-let colors = {
+let colors2 = {
 	/**
 	 * From https://gist.github.com/mjackson/5311256
 	 * Converts an RGB color value to HSL. Conversion formula
@@ -144,10 +144,10 @@ let colors = {
 
 //export to nodeJs
 if(typeof exports === 'object' && typeof module === 'object') {
-	module.exports = colors;
+	module.exports = colors2;
 }
 
 if (typeof modules === 'object') {
-	modules.register("@pdulvp/colors", colors);
+	modules.register("@pdulvp/colors", colors2);
 }
 
