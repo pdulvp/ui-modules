@@ -41,11 +41,11 @@ if (typeof require !== "undefined" && typeof exports === 'object' && typeof modu
 			}
 			return new Promise((resolve, reject) => {
 				
-				var data = undefined; 
+				let data = undefined; 
 				if (object != undefined) {
 					data = JSON.stringify(object); //querystring.stringify();
 				}
-				var options = {
+				let options = {
 					host: host,
 					port: 80,
 					path: path,
@@ -57,7 +57,7 @@ if (typeof require !== "undefined" && typeof exports === 'object' && typeof modu
 					options.headers['Content-Length'] = Buffer.byteLength(data);
 				}
 				
-				var req = http.request(options, function(res) {
+				let req = http.request(options, function(res) {
 				    let body = '';
 				    res.on('data', function(chunk) {
 				    	body += chunk;
@@ -159,7 +159,7 @@ if (typeof require !== "undefined" && typeof exports === 'object' && typeof modu
 		
 		get: function(host, path) {
 			return new Promise((resolve, reject) => {
-				xmlhttp=new XMLHttpRequest();
+				let xmlhttp=new XMLHttpRequest();
 				xmlhttp.onload = function (e) {
 					if (xmlhttp.readyState === 4) {
 					  if (xmlhttp.status === 200) {
