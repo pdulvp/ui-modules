@@ -12,43 +12,32 @@
 if (typeof require !== "undefined" && typeof exports === 'object' && typeof module === 'object') { 
 
 	var http = require("http");
+	var https = require("https");
+	var url = require('url'); 
+	var fs = require("fs");
 
 	var httpquery = {
-		
-		getHttp: function(file) {
-			return httpquery.request(file.host, file.path, "html");
+		get: function(uri) {
+			return httpquery.request(uri);
 		},
 		
-		getFile: function(file) {
-			let type = file.type ? file.type : "json";
-			return httpquery.request(file.host, file.path, type);
+		post: function(uri, object) {
+			return httpquery.request(uri, object);
 		},
 		
-		get: function(host, path) {
-			return httpquery.request(host, path, "json");
-		},
-		
-		postJson: function(host, path, object) {
-			return httpquery.request(host, path, "json", object);
-		},
-		
-		request: function(host, path, kind, object) {
-			if (host.startsWith("http://")) {
-				host = host.substring(7);
-			}
-			if (host.startsWith("https://")) {
-				host = host.substring(8);
+		request: function(uri, object) {
+			if (typeof uri === 'string' || uri instanceof String) {
+				uri = url.parse(uri, true);
 			}
 			return new Promise((resolve, reject) => {
-				
 				let data = undefined; 
 				if (object != undefined) {
 					data = JSON.stringify(object); //querystring.stringify();
 				}
 				let options = {
-					host: host,
-					port: 80,
-					path: path,
+					host: uri.hostname,
+					port: uri.port != undefined ? uri.port : (uri.protocol == "http:" ? 80: 443),
+					path: uri.path,
 					method: (data == undefined ? 'GET': 'POST'),
 					headers: { }
 				};
@@ -56,22 +45,17 @@ if (typeof require !== "undefined" && typeof exports === 'object' && typeof modu
 					options.headers['Content-Type'] = 'application/x-www-form-urlencoded';
 					options.headers['Content-Length'] = Buffer.byteLength(data);
 				}
-				
-				let req = http.request(options, function(res) {
+				let which = uri.protocol == "http:" ? http: https;
+				let req = which.request(options, function(res) {
 				    let body = '';
 				    res.on('data', function(chunk) {
 				    	body += chunk;
 				    });
 				    res.on('end', function() {
-						if (kind == "json") {
-							result = JSON.parse(body);
-						} else {
-							result = body;
-						}
 						if (res.statusCode == 404) {
 							reject(res.statusCode);
 						} else {
-							resolve(result);
+							resolve(body);
 						}
 				    });
 					
@@ -79,11 +63,37 @@ if (typeof require !== "undefined" && typeof exports === 'object' && typeof modu
 					console.log("Got error: " + e.message);
 					reject(e);
 				});
-
 				if (data != undefined) {
 					req.write(data);
 				}
 				req.end();
+			});
+		},
+		
+		saveTo: function(uri, filename) {
+			if (typeof uri === 'string' || uri instanceof String) {
+				uri = url.parse(uri, true);
+			}
+			let which = uri.protocol == "http:" ? http: https;
+			
+			return new Promise((resolve, reject) => {
+				const file = fs.createWriteStream(filename);
+				let options = {
+					host: uri.hostname,
+					port: uri.port != undefined ? uri.port : (uri.protocol == "http:" ? 80: 443),
+					path: uri.path,
+					method: 'GET',
+					headers: { }
+				};
+				const request = which.get(options, function(response) {
+					response.pipe(file);
+				});
+				request.on("finish", function() {
+					resolve(filename);
+				});
+				request.on("error", function(e) {
+					reject(e);
+				});
 			});
 		}
 	};
@@ -96,21 +106,10 @@ if (typeof require !== "undefined" && typeof exports === 'object' && typeof modu
 } else if (typeof $ !== "undefined") {
 	
 	let httpquery = {
-		getFile: function(file) {
-			return httpquery.get(file.host, file.path);
-		},
-		
-		get: function(host, path) {
-			if (host === undefined) {
-				host = window.location.origin;
-			}
-			if (path === undefined && !host.startsWith("http")) {
-				path = host;
-				host = window.location.origin;
-			}
+		get: function(url) {
 			return new Promise((resolve, reject) => {
 				$.ajax({
-				  url: `${host}/${path}`,
+				  url: `${url}`,
 				  data: null,
 				  success: function( result ) {
 					resolve(result);
@@ -121,20 +120,13 @@ if (typeof require !== "undefined" && typeof exports === 'object' && typeof modu
 				});
 			});
 		}, 
-		post: function(host, path, data) {
-			if (host === undefined) {
-				host = window.location.origin;
-			}
-			if (path === undefined && !host.startsWith("http")) {
-				path = host;
-				host = window.location.origin;
-			}
+		post: function(url, data) {
 			return new Promise((resolve, reject) => {
 				$.ajax({
 				  type: "POST",
 				  dataType: "json",
 				  contentType:"application/json",
-				  url: `${host}/${path}`,
+				  url: `${url}`,
 				  data: data,
 				  success: function( result ) {
 					resolve(result);
@@ -153,11 +145,7 @@ if (typeof require !== "undefined" && typeof exports === 'object' && typeof modu
 	
 } else if (window.XMLHttpRequest) {
 	let httpquery = {
-		getFile: function(file) {
-			return httpquery.get(file.host, file.path);
-		},
-		
-		get: function(host, path) {
+		get: function(url) {
 			return new Promise((resolve, reject) => {
 				let xmlhttp=new XMLHttpRequest();
 				xmlhttp.onload = function (e) {
@@ -172,7 +160,7 @@ if (typeof require !== "undefined" && typeof exports === 'object' && typeof modu
 				  xmlhttp.onerror = function (e) {
 					reject(xmlhttp.statusText);
 				  };
-				xmlhttp.open("GET", host+"/"+path, true);
+				xmlhttp.open("GET", url, true);
 				xmlhttp.send(null); 
 			});
 		}
