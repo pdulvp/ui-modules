@@ -1,11 +1,8 @@
 {
   "name": "@pdulvp/httpquery",
   "version": "2.0.0",
+  "repository":"https://github.com/pdulvp/ui-modules",
   "description": "",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/pdulvp/httpquery.git"
-  },
   "main": "httpquery.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,11 +1,8 @@
 {
   "name": "@pdulvp/index",
   "version": "1.0.1",
+  "repository":"https://github.com/pdulvp/ui-modules",
   "description": "",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/pdulvp/index.git"
-  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

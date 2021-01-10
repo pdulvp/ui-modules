@@ -1,11 +1,8 @@
 {
   "name": "@pdulvp/sources",
   "version": "1.0.1",
+  "repository":"https://github.com/pdulvp/ui-modules",
   "description": "",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/pdulvp/sources.git"
-  },
   "main": "sources.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

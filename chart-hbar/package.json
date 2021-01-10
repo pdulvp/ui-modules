@@ -1,6 +1,7 @@
 {
   "name": "@pdulvp/chart-hbar",
   "version": "1.0.1",
+  "repository":"https://github.com/pdulvp/ui-modules",
   "description": "",
   "main": "chart-hbar.js",
   "scripts": {

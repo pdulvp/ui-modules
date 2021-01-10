@@ -1,6 +1,7 @@
 {
   "name": "@pdulvp/httpcquery",
   "version": "1.0.1",
+  "repository":"https://github.com/pdulvp/ui-modules",
   "description": "",
   "main": "httpcquery.js",
   "scripts": {

@@ -1,12 +1,9 @@
 {
   "name": "@pdulvp/chart-france",
   "version": "1.0.2",
+  "repository":"https://github.com/pdulvp/ui-modules",
   "description": "Display a France map",
   "main": "chart-france.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/pdulvp/chart-france.git"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

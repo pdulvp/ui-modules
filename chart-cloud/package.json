@@ -1,12 +1,9 @@
 {
   "name": "@pdulvp/chart-cloud",
   "version": "1.0.2",
+  "repository":"https://github.com/pdulvp/ui-modules",
   "description": "Display a cloud tag",
   "main": "chart-cloud.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/pdulvp/chart-cloud.git"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

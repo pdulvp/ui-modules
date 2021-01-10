@@ -1,11 +1,8 @@
 {
   "name": "@pdulvp/require",
   "version": "1.0.0",
+  "repository":"https://github.com/pdulvp/ui-modules",
   "description": "It allows to use the require(module) format in browser js files and to allow basic nodejs modules to be run into browser.",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/pdulvp/require.git"
-  },
   "main": "require.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
